@@ -1,11 +1,16 @@
 package com.example.billy.assignment3;
 
+/**
+ * @date 2019-03-25
+ * William Van Buskirk
+ */
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 public class RecipeDetailActivity extends AppCompatActivity {
 
@@ -22,10 +27,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
         recipeTitle.setText(getIntent().getStringExtra("name"));
         recipeDirections.setText(getIntent().getStringExtra("directions"));
         recipeIngredients.setText(getIntent().getStringExtra("ingredients"));
-        //glide not loading image
-        Glide.with(this).load(getIntent().getStringExtra("image"))
-                .into(recipeImage);
 
+        Picasso.get()
+                .load(getIntent().getStringExtra("image"))
+                .fit()
+                .placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_background)
+                .into(recipeImage);
 
     }
 }

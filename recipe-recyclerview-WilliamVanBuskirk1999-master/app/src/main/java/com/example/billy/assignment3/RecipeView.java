@@ -1,5 +1,10 @@
 package com.example.billy.assignment3;
 
+/**
+ * @date 2019-03-25
+ * William Van Buskirk
+ */
+
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
